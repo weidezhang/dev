@@ -1,0 +1,82 @@
+# Bind F11 and F12 (NOT F1 and F2) to previous and next screen window
+#bindkey "^[[1;5C" next
+#bindkey "^[[1;5D" prev
+# Bind shift right/left to next/prev
+
+startup_message off
+
+# Window list at the bottom.
+#hardstatus alwayslastline
+#hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+#
+# # From Stephen Shirley
+# # Don't block command output if the terminal stops responding
+# # (like if the ssh connection times out for example).
+#nonblock on
+
+bindkey "^[[1;2C" next
+bindkey "^[[1;2D" prev
+
+# Map Ctrl-A to `
+escape ``
+ 
+# keep scrollback n lines
+defscrollback 10240
+ 
+# tab-completion flash in heading bar
+vbell off
+ 
+# Use UTF-8
+setenv LC_CTYPE en_US.UTF-8
+defutf8 on
+ 
+# Defined a command with ID 1, which is valid for 60 seconds and should auto-refresh after 60 seconds; used in status bar
+# http://www.debian-administration.org/articles/560
+# backtick 1 60 60 uptime
+ 
+# Show status line at the bottom
+hardstatus alwayslastline
+# http://www.gnu.org/software/screen/manual/html_node/String-Escapes.html
+# Format for color is %{attribute-modifier color-description}; there is a **space** between attribute-modifier and
+# color-description.
+# attribute-modifier = {ca} where c = change type and a = attribute; no space between c and a
+# color-description = {bf} where b = background color and f = foreground color
+ 
+# Explanation: magenta:space:pad previous string with hfill:display the string between two %? only if they: window
+# number and name till current window:cyan: current window number: current window name: window number and name after the
+# current one: black: load: blue: date and time
+hardstatus string '%{= m} %=%?%-w%?%{= c}%n %t%?%{= m}%+w%?   %{k}%l %{b}%D %M %d %C:%s %A '
+ 
+ 
+# The caption line is usually only shown if there is more than one window open, and allows you to view details of them.
+#caption always
+#caption string ""
+ 
+screen -t w0 0 bash
+screen -t w1 1 bash
+screen -t w2 2 bash
+screen -t w3 3 bash
+screen -t w4 4 bash
+screen -t w5 5 bash
+screen -t w6 6 bash
+screen -t w7 7 bash
+ 
+# Sets whether screen will automatically detach upon hangup, which saves all
+# your running programs until they are resumed with a screen -r command. When
+# turned off, a hangup signal will terminate screen and all the processes it
+# contains.
+autodetach on
+ 
+# Set the window title
+shelltitle '$ |bash'
+ 
+ 
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce on
+
+shell "/usr/bin/bash"

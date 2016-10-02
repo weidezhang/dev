@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/w/dev/code/track_classification/src/program/camera'
+let g:netrw_dirhist_2='/home/w/dev/code/perception_master/perception/production/obstacle/data/models/combined_classifier'
+let g:netrw_dirhist_3='/home/w/dev/code/perception_master/perception/obstacle_detection/tracking'
+let g:netrw_dirhist_4='/home/w/dev/code/perception/obstacle_detection/smartseg'
+let g:netrw_dirhist_5='/home/w/dev/code/perception/build/obstacle_detection/smartseg/tools/CMakeFiles'
+let g:netrw_dirhist_6='/home/w/dev/code/perception/build/obstacle_detection/smartseg/smartseg/CMakeFiles'
+let g:netrw_dirhist_7='/home/w/dev/code/perception_roi_shixi/production/obstacle/data/models/smart_segmentation'
