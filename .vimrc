@@ -33,8 +33,11 @@ vmap <S-Tab> <gv
 
 "auto switch vim buffer
 map gg :bn<cr>
-map ff :bp<cr>
 map gd :bd<cr> 
+
+"folding
+noremap ff za<cr>
+noremap fg zM<cr>
 
 "set vim buffer issue when exiting from vim 
 set t_ti= t_te=  
@@ -72,6 +75,7 @@ noremap <silent> ,cu :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<C
 set completeopt-=preview
 let g:SuperTabClosePreviewOnPopupClose = 1
 set tags+=/home/w/dev/code/perception_release/perception/tags
+set tags+=/home/w/dev/code/baidu/adu/decision/src/tags
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
@@ -90,7 +94,7 @@ let g:SuperTabDefaultCompletionType="context"
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
-set foldlevel=2
+set foldlevel=1
 
 let g:mapleader='-'
 let g:ctrlp_map='ll'
