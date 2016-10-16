@@ -121,12 +121,4 @@ export PATH=${CUDA_HOME}/bin:$PATH
 #source /opt/ros/indigo/setup.bash
 #export PYTHONPATH='/opt/ros/indigo/lib/python2.7/dist-packages':'/usr/lib/python2.7':'/usr/lib/python2.7/plat-x86_64-linux-gnu':'/usr/lib/python2.7/lib-tk':'/usr/lib/python2.7/lib-old':'/usr/lib/python2.7/lib-dynload':'/usr/local/lib/python2.7/dist-packages':'/usr/lib/python2.7/dist-packages':'/usr/lib/python2.7/dist-packages/PILcompat':'/usr/lib/python2.7/dist-packages/gtk-2.0':'/usr/lib/pymodules/python2.7':'/usr/lib/python2.7/dist-packages/ubuntu-sso-client':'/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode'
 
-#source /home/w/catkin_ws/devel/setup.bash
-source /home/caros/ros/setup.bash
-source /home/caros/adu/setup.bash
-export ADU_NODE=/home/caros/adu
-export ADU_ROS=/home/caros/ros
-export ADU_BAG=/home/caros/data
-source /home/caros/adu/share/integration/scripts/init.sh
-
 alias gen_tags="ctags -R --c++-kinds=+p --fields=+iaS --extra=+q ."
