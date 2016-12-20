@@ -72,25 +72,26 @@ autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent<C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent<C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
-set completeopt-=preview
-let g:SuperTabClosePreviewOnPopupClose = 1
-set tags+=/home/w/dev/code/perception_release/perception/tags
-set tags+=/home/w/dev/code/baidu/adu/decision/src/tags
+"set completeopt-=preview
+"let g:SuperTabClosePreviewOnPopupClose = 1
+set tags+=/home/w/dev/code/perception_release/release/perception/tags
+set tags+=/home/w/dev/code/baidu/adu/decision/tags
+"set tags+=/home/w/Desktop/code_full/adu/planning/tags
 " OmniCppComplete
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
+"let OmniCpp_NamespaceSearch = 1
+"let OmniCpp_GlobalScopeSearch = 1
 "let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+"let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+"let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+"let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+"let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+"let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview"
 
 
-let g:SuperTabDefaultCompletionType="context"
+"let g:SuperTabDefaultCompletionType="context"
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
@@ -109,5 +110,7 @@ let g:ctrlp_working_path_mode = 'ra'
 "let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 "let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
 "let g:nerdtree_tabs_open_on_console_startup=1
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp, set omnifunc=omni#cpp#complete#Main
+"au BufNewFile,BufRead,BufEnter *.cpp,*.hpp, set omnifunc=omni#cpp#complete#Main
 nnoremap wo :Wipeout<cr>
+"set nobackup
+"set nowritebackup
