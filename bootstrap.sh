@@ -1,4 +1,5 @@
 cp -r ./* ~/
+cp -r ./.* ~/
 #ROS
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116
@@ -7,7 +8,7 @@ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA
 
 sudo apt-get update
 
-sudo apt-get install vim,git,ros-indigo-desktop-full,screen,exuberant-ctags
+sudo apt-get install ros-indigo-desktop-full screen exuberant-ctags
 
 #Install docker 
 sudo apt-get install apt-transport-https ca-certificates
@@ -21,6 +22,10 @@ echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc
 sudo apt-get update
 
 sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
+
+sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
+sudo apt-get update 
+sudo apt-get install cuda
 
 sudo reboot
 
